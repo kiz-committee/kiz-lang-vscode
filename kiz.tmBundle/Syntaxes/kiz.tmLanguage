@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Zata</string>
+    <key>scopeName</key>
+    <string>source.zata</string>
+    <key>fileTypes</key>
+    <array>
+        <string>zata</string>
+    </array>
+    <key>patterns</key>
+    <array>
+        <!-- 1. 注释（最高优先级） -->
+        <dict>
+            <key>name</key>
+            <string>comment.block.zata</string>
+            <key>begin</key>
+            <string>===</string>
+            <key>end</key>
+            <string>===</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>comment.line.double-slash.zata</string>
+            <key>match</key>
+            <string>//.*$</string>
+        </dict>
+
+        <!-- 2. 字符串 -->
+        <dict>
+            <key>name</key>
+            <string>string.quoted.double.zata</string>
+            <key>match</key>
+            <string>"(?:\\\\.|[^"\\\\])*"</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>string.quoted.single.zata</string>
+            <key>match</key>
+            <string>'(?:\\\\.|[^'\\\\])*'</string>
+        </dict>
+
+        <!-- 3. 特殊变量（self/cls） -->
+        <dict>
+            <key>name</key>
+            <string>variable.language.zata</string>
+            <key>match</key>
+            <string>\b(self|cls)\b</string>
+        </dict>
+
+        <!-- 4. 内置类型（必须在关键字之前） -->
+        <dict>
+            <key>name</key>
+            <string>constant.language.zata</string>
+            <key>match</key>
+            <string>\b(arr|bool|char|dec|dict|doub|enum|float|int|lattice|list|nofound|none|record|set|str|struct|tuple)\b</string>
+        </dict>
+
+        <!-- 5. 关键字（在类型之后，避免覆盖） -->
+        <dict>
+            <key>name</key>
+            <string>keyword.control.zata</string>
+            <key>match</key>
+            <string>\b(and|async|await|break|case|catch|class|do|elif|else|end|finally|fn|for|go|if|import|in|is|let|match|new|next|not|or|outer|repeat|return|step|throw|to|try|until|use|when|while|with|yield)\b</string>
+        </dict>
+
+        <!-- 6. 运算符 -->
+        <dict>
+            <key>name</key>
+            <string>operator.special.zata</string>
+            <key>match</key>
+            <string>(=>|@)</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>operator.zata</string>
+            <key>match</key>
+            <string>(=~=|!~=|==|!=|->|\+=|-=|\*=|\/=|%=|\^=|>=|\+|-|\*|\/|%|\^|>|=|\.\.\.|\.| \(|\)|\[|\]|\{|\}|:|,|;)</string>
+        </dict>
+
+        <!-- 7. 数字 -->
+        <dict>
+            <key>name</key>
+            <string>constant.numeric.zata</string>
+            <key>match</key>
+            <string>\b(0x[0-9a-fA-F]+|0b[01]+|\d+\.\d+|\d+)\b</string>
+        </dict>
+    </array>
+</dict>
+</plist>
