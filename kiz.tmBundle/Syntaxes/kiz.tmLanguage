@@ -3,87 +3,87 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Zata</string>
+    <string>kiz</string>
     <key>scopeName</key>
-    <string>source.zata</string>
+    <string>source.kiz</string>
     <key>fileTypes</key>
     <array>
-        <string>zata</string>
+        <string>kiz</string>
     </array>
     <key>patterns</key>
     <array>
         <!-- 1. 注释（最高优先级） -->
         <dict>
             <key>name</key>
-            <string>comment.block.zata</string>
+            <string>comment.block.kiz</string>
             <key>begin</key>
-            <string>===</string>
+            <string>/*</string>
             <key>end</key>
-            <string>===</string>
+            <string>*/</string>
         </dict>
         <dict>
             <key>name</key>
-            <string>comment.line.double-slash.zata</string>
+            <string>comment.line.double-slash.kiz</string>
             <key>match</key>
-            <string>//.*$</string>
+            <string>#.*$</string>
         </dict>
 
         <!-- 2. 字符串 -->
         <dict>
             <key>name</key>
-            <string>string.quoted.double.zata</string>
+            <string>string.quoted.double.kiz</string>
             <key>match</key>
             <string>"(?:\\\\.|[^"\\\\])*"</string>
         </dict>
         <dict>
             <key>name</key>
-            <string>string.quoted.single.zata</string>
+            <string>string.quoted.single.kiz</string>
             <key>match</key>
             <string>'(?:\\\\.|[^'\\\\])*'</string>
         </dict>
 
-        <!-- 3. 特殊变量（self/cls） -->
+        <!-- 3. 特殊变量（this） -->
         <dict>
             <key>name</key>
-            <string>variable.language.zata</string>
+            <string>variable.language.kiz</string>
             <key>match</key>
-            <string>\b(self|cls)\b</string>
+            <string>\b(this)\b</string>
         </dict>
 
         <!-- 4. 内置类型（必须在关键字之前） -->
         <dict>
             <key>name</key>
-            <string>constant.language.zata</string>
+            <string>constant.language.kiz</string>
             <key>match</key>
-            <string>\b(arr|bool|char|dec|dict|doub|enum|float|int|lattice|list|nofound|none|record|set|str|struct|tuple)\b</string>
+            <string>\b(Object|Int|Str|Bool|List|Dict)\b</string>
         </dict>
 
         <!-- 5. 关键字（在类型之后，避免覆盖） -->
         <dict>
             <key>name</key>
-            <string>keyword.control.zata</string>
+            <string>keyword.control.kiz</string>
             <key>match</key>
-            <string>\b(and|async|await|break|case|catch|class|do|elif|else|end|finally|fn|for|go|if|import|in|is|let|match|new|next|not|or|outer|repeat|return|step|throw|to|try|until|use|when|while|with|yield)\b</string>
+            <string>\b(False|Nil|True|and|break|catch|else|end|finally|fn|for|global|if|import|in|is|next|nonlocal|not|object|or|return|throw|try|while)\b</string>
         </dict>
 
         <!-- 6. 运算符 -->
         <dict>
             <key>name</key>
-            <string>operator.special.zata</string>
+            <string>operator.special.kiz</string>
             <key>match</key>
             <string>(=>|@)</string>
         </dict>
         <dict>
             <key>name</key>
-            <string>operator.zata</string>
+            <string>operator.kiz</string>
             <key>match</key>
-            <string>(=~=|!~=|==|!=|->|\+=|-=|\*=|\/=|%=|\^=|>=|\+|-|\*|\/|%|\^|>|=|\.\.\.|\.| \(|\)|\[|\]|\{|\}|:|,|;)</string>
+            <string>(==|!=|>=|<=|\+|-|\*|\/|%|\^|>|=|\.\.\.|\.| \(|\)|\[|\]|\{|\}|:|,|;)</string>
         </dict>
 
         <!-- 7. 数字 -->
         <dict>
             <key>name</key>
-            <string>constant.numeric.zata</string>
+            <string>constant.numeric.kiz</string>
             <key>match</key>
             <string>\b(0x[0-9a-fA-F]+|0b[01]+|\d+\.\d+|\d+)\b</string>
         </dict>
