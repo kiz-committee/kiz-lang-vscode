@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 捆绑包唯一标识符） -->
+    <key>CFBundleIdentifier</key>
+    <string>com.kiz.lang</string>
+
+    <!-- 捆绑包名称（与语言名称一致） -->
+    <key>CFBundleName</key>
+    <string>kiz</string>
+
+    <!-- 捆绑包版本 -->
+    <key>CFBundleVersion</key>
+    <string>0.1</string>
+
+    <!-- 语言名称（显示在编辑器中） -->
+    <key>LanguageName</key>
+    <string>kiz</string>
+
+    <!-- 关联的文件后缀（与语法文件中的fileTypes一致）-->
+    <key>FileExtensions</key>
+    <array>
+        <string>kiz</string>
+    </array>
+</dict>
+</plist>
